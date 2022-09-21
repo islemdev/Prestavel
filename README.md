@@ -40,4 +40,13 @@ use Islemdev\Prestavel\Facades\PrestavelConnector;
 PrestavelConnector::select("*");//add whatever field you want
 ````
 ## Installing
+In your command line (in your project directory) run
+````
+composer require islemdev/prestavel
+````
+
+then, to publish assets and config file, run
+````
+php artisan vendor:publish --provider="Islemdev\Prestavel\PrestavelServiceProvider" --tag="config"
+````
 
