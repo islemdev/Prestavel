@@ -25,4 +25,19 @@ PrestavelConnector::select("id", 'id_customer') //select what fields you want
         ->get() // collection
 ````
 
+### Select
+you can select multiple fields from resource's schema
+````php
+use Islemdev\Prestavel\Facades\PrestavelConnector;
+ 
+PrestavelConnector::select("id", 'id_customer');//add whatever field you want
+````
+
+you can select all fields by passing * to params
+````php
+use Islemdev\Prestavel\Facades\PrestavelConnector;
+ 
+PrestavelConnector::select("*");//add whatever field you want
+````
 ## Installing
+
