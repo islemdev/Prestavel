@@ -1,6 +1,5 @@
 <?php
 namespace Islemdev\Prestavel;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Islemdev\Prestavel\Exceptions\InvalidOperatorException;
 use Islemdev\Prestavel\Exceptions\InvalidPrestashopEndPonint;
@@ -58,7 +57,7 @@ class PrestavelConnector
         if(in_array("*", $args))
             $this->addQueryParameters('display', 'full');
         else
-            $this->addQueryParameters('display', '['.Arr::join($args,',').']');
+            $this->addQueryParameters('display', '['.implode(',', $args).']');
         return $this;
     }
 
