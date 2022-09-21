@@ -12,9 +12,21 @@ class PrestavelServiceProvider extends ServiceProvider
     $this->app->bind('PrestavelConnector', function($app) {
         return new PrestavelConnector(config('prestavel.api_url'), config('prestavel.api_token'));
     });
+
+
+    //config
+    $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'prestavel');
+
   }
 
   public function boot()
   {
+    if ($this->app->runningInConsole()) {
+
+        $this->publishes([
+          __DIR__.'/../config/config.php' => config_path('prestavel.php'),
+        ], 'config');
+    
+      }
   }
 }
