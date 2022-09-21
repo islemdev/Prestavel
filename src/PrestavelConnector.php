@@ -3,6 +3,9 @@ namespace Islemdev\Prestavel;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Islemdev\Prestavel\Exceptions\InvalidOperatorException;
+use Islemdev\Prestavel\Exceptions\InvalidPrestashopEndPonint;
+use Islemdev\Prestavel\Exceptions\InvalidPrestashopToken;
+
 use Illuminate\Support\Str;
 
 class PrestavelConnector
@@ -11,6 +14,12 @@ class PrestavelConnector
     
     public function __construct($base_url, $api_token)
     {
+        //check check base url is set
+        if($base_url === null)
+            throw new InvalidPrestashopEndPonint("Please set your prestashop endpoint in the config file");
+        if($base_url === null)
+            throw new InvalidPrestashopToken("Please set your prestashop api token in the config file");
+
         $this->api_base_url = $base_url.'/api';
         $this->api_token = $api_token;
         try {
