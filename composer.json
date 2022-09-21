@@ -1,0 +1,31 @@
+{
+    "name": "islemdev/prestavel",
+    "description": "Laravel package to consume prestashop webservice easily",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Islemdev\\Prestavel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Islemdev\\Prestavel\\PrestavelServiceProvider"
+            ],
+            "aliases": {
+                "PrestavelConnector": "Islemdev\\Prestavel\\Facades\\PrestavelConnector"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "islem",
+            "email": "friouiislem@gmail.com"
+        }
+    ],
+    "require": {
+        "orchestra/testbench": "^7.7",
+        "guzzlehttp/guzzle": "^7.5"
+    }
+}
