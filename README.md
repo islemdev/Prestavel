@@ -39,6 +39,36 @@ use Islemdev\Prestavel\Facades\PrestavelConnector;
  
 PrestavelConnector::select("*");//add whatever field you want
 ````
+
+### Where clause
+like you used to do with eloquent you can use the where clause as below
+````php
+use Islemdev\Prestavel\Facades\PrestavelConnector;
+ 
+PrestavelConnector::where("id", '2');//where id = 2
+````
+where grater than
+````php
+use Islemdev\Prestavel\Facades\PrestavelConnector;
+ 
+PrestavelConnector::where("id", ">", '2');//where id > 2
+````
+
+where lower than
+````php
+use Islemdev\Prestavel\Facades\PrestavelConnector;
+ 
+PrestavelConnector::where("id", "<", '2');//where id < 2
+````
+
+where not equal
+````php
+use Islemdev\Prestavel\Facades\PrestavelConnector;
+ 
+PrestavelConnector::where("id", "!=", '2');//where id != 2
+````
+
+
 ## Installing
 In your command line (in your project directory) run
 ````
