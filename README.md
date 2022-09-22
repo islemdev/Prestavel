@@ -14,7 +14,20 @@ Prestavel is a package that helps you make your prestashop webservices call in a
 ## Last version
 For this version you can get (read mode) your data from prestashop
 
-## Example
+## Installation
+In your command line (in your project directory) run
+````
+composer require islemdev/prestavel
+````
+
+then, to publish assets and config file, run
+````
+php artisan vendor:publish --provider="Islemdev\Prestavel\PrestavelServiceProvider" --tag="config"
+````
+
+
+
+## Usage
 ````php
 use Islemdev\Prestavel\Facades\PrestavelConnector;
 
@@ -68,15 +81,4 @@ use Islemdev\Prestavel\Facades\PrestavelConnector;
 PrestavelConnector::where("id", "!=", '2');//where id != 2
 ````
 
-
-## Installing
-In your command line (in your project directory) run
-````
-composer require islemdev/prestavel
-````
-
-then, to publish assets and config file, run
-````
-php artisan vendor:publish --provider="Islemdev\Prestavel\PrestavelServiceProvider" --tag="config"
-````
 
